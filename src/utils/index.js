@@ -1,0 +1,1 @@
+export { randomMenu } from "./randoMenu";

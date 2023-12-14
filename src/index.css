@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* For Webkit-based browsers (Chrome, Safari and Opera) */
+@layer utilities {
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+  }
+}
+
+/* For IE, Edge and Firefox */
+.scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+div {
+  box-sizing: border-box !important;
+}
