@@ -1,8 +1,13 @@
-import React from "react";
-import { ButtonDefault } from "@/components";
-import { ButtonAnimated } from "../ui/ButtonAnimated";
-import image from "../../assets/images/herosection.svg";
+import { Link } from "react-router-dom";
+
 export const Hero = () => {
+  const handleScrollToBottom = () => {
+    window.scrollBy({
+      top: 350,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section className="bg-center bg-no-repeat bg-[url('/src/assets/images/herosection.svg')] bg-gray-700 bg-blend-multiply">
       <div className="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
@@ -14,9 +19,10 @@ export const Hero = () => {
           Descubre el sueño perfecto que te mereces.
         </p>
         <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
-          <a
+          <button
             href="#"
-            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-full bg-primary hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
+            onClick={handleScrollToBottom}
+            className="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-full bg-primary hover:bg-blue-800 focus:ring-1 focus:ring-blue-300 dark:focus:ring-blue-900"
           >
             Comprar
             <svg
@@ -34,13 +40,15 @@ export const Hero = () => {
                 d="M1 5h12m0 0L9 1m4 4L9 9"
               />
             </svg>
-          </a>
-          <a
-            href="#"
-            className="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white rounded-full border border-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-400"
-          >
-            Contacto
-          </a>
+          </button>
+          <Link to="/contact">
+            <button
+              href="#"
+              className="inline-flex justify-center hover:text-gray-900 items-center py-3 px-5 sm:ms-4 text-base font-medium text-center text-white rounded-full border border-white hover:bg-gray-100 focus:ring-1 focus:ring-gray-400"
+            >
+              Contacto
+            </button>
+          </Link>
         </div>
       </div>
     </section>
